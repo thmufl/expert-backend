@@ -1,0 +1,26 @@
+GET http://localhost:8001/api/person
+
+###
+
+GET http://localhost:8001/api/person/601c3aa82bbbab60b5310345
+
+###
+
+GET http://localhost:8001/api/person/find/english-italian
+
+###
+
+POST http://localhost:8001/api/person
+content-type: application/json
+
+{
+    "tags": [
+      "italian-german interpreter",
+      "french-italian translator",
+      "english-italian translator"
+    ],
+    "_id": "601c3aa82bbbab60b5310345",
+    "name": "Carla Boffi",
+    "description": "Carla is an experienced italian translator. She lives Lugano",
+    "__v": 0
+}
