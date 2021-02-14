@@ -1,0 +1,60 @@
+###
+POST http://localhost:8001/api/users
+content-type: application/json
+
+{
+    "name": "Ann Smith",
+    "email": "ann@expert.org",
+    "password": "12345",
+    "isAdmin": true
+}
+
+###
+POST http://localhost:8001/api/users
+content-type: application/json
+
+{
+    "name": "Carlos Santana",
+    "email": "carlos@expert.org",
+    "password": "12345"
+}
+
+###
+POST http://localhost:8001/api/users
+content-type: application/json
+
+{
+    "name": "Igor Stravinsky",
+    "email": "igor@expert.org",
+    "password": "12345"
+}
+
+###
+POST http://localhost:8001/api/users
+content-type: application/json
+
+{
+    "name": "Pietro Cavalli",
+    "email": "pietro@expert.org",
+    "password": "12345"
+}
+
+###
+POST http://localhost:8001/api/auth
+content-type: application/json
+
+{
+    "email": "carlos@expert.org",
+    "password": "12345"
+}
+
+###
+GET http://localhost:8001/api/users/me
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI5NWNkYzE4NDkxMDVjZTg1MDI5OTciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MTMzMjM0ODR9.TLSDbMK_C1t9mEihZOBEDHHY01wk4CC2qYCGfOm5gGg
+
+###
+GET http://localhost:8001/api/users/me
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI5NWQwNTE4NDkxMDVjZTg1MDI5OWEiLCJpYXQiOjE2MTMzMjQwMjR9.nN1lxSqeMVmEU_n_TzXJJlJM_AP6Mdudeknz39y514E
+
