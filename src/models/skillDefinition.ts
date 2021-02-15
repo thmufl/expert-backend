@@ -1,10 +1,12 @@
 import mongoose, { Schema, Document } from "mongoose";
-import { IPerson } from "./person";
+import Joi from "Joi";
+
+import User, { IUser } from "./user";
 
 export interface ISkillDefinition extends Document {
   name: string;
   description: string;
-  creator: IPerson;
+  creator: IUser;
 }
 
 const skillDefinitionSchema = new Schema({
@@ -18,10 +20,19 @@ const skillDefinitionSchema = new Schema({
     type: String,
     max: 2048
   },
-  creator: {
+  createdBy: {
     type: mongoose.Types.ObjectId,
-    ref: "Person"
+    ref: User
   }
 });
+
+export const validate = (skillDef: ISkillDefinition) => {
+  const schema = Joi.object({
+    name: Joi.string().min(5).max(255).required(),
+    description: Joi.string().max(2048),
+    createdBy: Joi.string().required()
+  });
+  return schema.validate(skillDef);
+};
 
 export default mongoose.model<ISkillDefinition>("SkillDefinition", skillDefinitionSchema);

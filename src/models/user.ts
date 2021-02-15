@@ -1,7 +1,7 @@
 import config from "config";
 import jwt from "jsonwebtoken";
-import Joi from "Joi";
 import mongoose, { Schema, Document } from "mongoose";
+import Joi from "Joi";
 
 export interface IUser extends Document {
   name: string;
@@ -11,7 +11,7 @@ export interface IUser extends Document {
   generateAuthToken: any;
 }
 
-const userSchema = new Schema({
+export const userSchema = new Schema({
   name: {
     type: String,
     required: true,

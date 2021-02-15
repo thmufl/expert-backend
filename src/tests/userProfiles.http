@@ -1,0 +1,15 @@
+
+
+POST http://localhost:8001/api/userProfiles
+content-type: application/json
+
+{
+  "user": "602a4e25e59865090b8286ba",
+  "description": "Hans is a...",
+  "skills": [],
+  "organisations": [],
+  "visibility": "private"
+}
+
+###
+GET http://localhost:8001/api/userProfiles/602a9dabb0ce630fad3eb41a

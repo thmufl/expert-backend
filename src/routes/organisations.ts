@@ -1,5 +1,5 @@
 import express from "express";
-import Organisation from "../models/organisation";
+import Organisation, { validate } from "../models/organisation";
 
 const router = express.Router();
 
@@ -14,11 +14,15 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  const { error } = validate(req.body);
+	if (error) return res.status(400).json({ error: error.details[0].message });
   const organisation = await Organisation.create(req.body);
   res.json(organisation);
 });
 
 router.put("/:id", async (req, res) => {
+  const { error } = validate(req.body);
+	if (error) return res.status(400).json({ error: error.details[0].message });
   const organisation = await Organisation.findByIdAndUpdate(
     req.params.id,
     { $set: req.body },

@@ -1,0 +1,3 @@
+{"level":"error","message":"SyntaxError: Unexpected token } in JSON at position 91","service":"user-service"}
+{"level":"error","message":"SyntaxError: Unexpected token } in JSON at position 91","service":"user-service"}
+{"level":"info","message":"Registered user {\n  _id: 602a4e25e59865090b8286ba,\n  name: 'Hans Arp',\n  email: 'hans@expert.org',\n  password: '$2b$10$5.tuZmDMECTZd0/lZoufKOTtw82ChRPbTECvdJeBLhza1dCcsSRQ2',\n  __v: 0\n}","service":"user-service"}
