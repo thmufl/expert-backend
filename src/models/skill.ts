@@ -1,31 +1,28 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { Schema, Document } from "mongoose";
 import Joi from "Joi";
-import SkillDefinition, { ISkillDefinition } from "./skillDefinition";
-import User, { IUser } from "./user";
 
 export interface ISkill extends Document {
-	skillDefinition: ISkillDefinition;
-	confirmedBy: IUser[];
+	name: String;
+	status: String;
 }
 
-const skillSchema: Schema = new Schema({
-	skillDefinition: {
-		type: mongoose.Types.ObjectId,
-		ref: SkillDefinition,
+const skillSchema = new Schema({
+	name: {
+		type: String,
 		required: true,
 	},
-	confirmedBy: [
-		{
-			type: mongoose.Types.ObjectId,
-			ref: User,
-		},
-	],
+	status: {
+		type: String,
+		enum: ["unconfirmed", "confirmed", "suspended"],
+		required: true,
+		default: "unconfirmed"
+	},
 });
 
 export const validate = (skill: ISkill) => {
 	const schema = Joi.object({
-		skillDefinition: Joi.string().required(),
-		confirmedBy: Joi.array().max(1e6),
+		name: Joi.string().min(5).max(256).required(),
+		status: Joi.string().required().valid("unconfirmed", "confirmed", "suspended"),
 	});
 	return schema.validate(skill);
 };

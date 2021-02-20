@@ -1,0 +1,190 @@
+
+
+### Organisation
+GET http://localhost:8001/api/persons
+
+###
+
+GET http://localhost:8001/api/skills/602647d2ae6ea5322108b9a3
+
+###
+
+PUT http://localhost:8001/api/organisations/602407373c4559334d971a1f
+content-type: application/json
+
+{
+    "name": "United Nations",
+    "description": "Goals and values of the UN...",
+    "visibility": "public",
+    "suborganisations": ["602425217c05a036fcd01df5"],
+    "members": ["60241da2aaa901362ea9108f"]
+}
+
+###
+
+POST http://localhost:8001/api/persons
+content-type: application/json
+
+{
+    "name": "Anna King",
+    "description": "...",
+    "visibility": "public",
+    "email": "anna@expert.com",
+    "skills": []
+}
+
+###
+
+POST http://localhost:8001/api/skills
+content-type: application/json
+
+{
+    "name": "English-German Translator",
+    "description": "...",
+    "creator": "60264768ae6ea5322108b9a2"
+}
+
+###
+
+PUT http://localhost:8001/api/persons/60264768ae6ea5322108b9a2
+content-type: application/json
+
+{
+    "_id": "60264768ae6ea5322108b9a2",
+    "name": "Anna King",
+    "description": "...",
+    "visibility": "public",
+    "email": "anna@expert.com",
+    "skills": [
+        {
+            "definition": "602647d2ae6ea5322108b9a3",
+            "confirmedBy": ["60264768ae6ea5322108b9a2"]
+        }
+    ],
+    "__v": 0
+  }
+
+###
+
+PUT http://localhost:8001/api/skills
+content-type: application/json
+
+{
+    "name": "Spanish-German Translation",
+    "description": "...",
+    "creator": "60243511e934bc39d00c6608"
+}
+
+###
+
+POST http://localhost:8001/api/persons
+content-type: application/json
+
+{
+    "name": "Carlos Santana",
+    "description": "...",
+    "email": "carlos@expert.com",
+    "skills": ["60243597e934bc39d00c6609"]
+}
+
+###
+
+PUT http://localhost:8001/api/organisations/60243659300c9339eaafc7dc
+content-type: application/json
+
+{
+    "name": "United Nations",
+    "description": "...",
+    "visibility": "public",
+    "suborganisations": ["6024367d300c9339eaafc7dd"],
+    "members": ["602435d8e934bc39d00c660a"]
+}
+
+###
+
+POST http://localhost:8001/api/persons
+content-type: application/json
+
+{
+    "name": "Carlos Santana",
+    "description": "...",
+    "email": "carlos@expert.com"
+}
+
+###
+
+POST http://localhost:8001/api/organisations
+content-type: application/json
+
+{
+    "name": "World Health Organisation",
+    "description": "Goals and values of the WHO...",
+    "visibility": "public",
+    "suborganisations": []
+}
+
+###
+
+DELETE http://localhost:8001/api/organisations/6023a12940aaa6287f3cc19e
+
+###
+
+GET http://localhost:8001/api/organisations/6023a20140aaa6287f3cc19f
+
+
+###
+
+PUT http://localhost:8001/api/organisations/6023a20140aaa6287f3cc19f
+content-type: application/json
+
+{
+    "name": "United Nations",
+    "description": "Goals and values of the UN...",
+    "visibility": "public",
+    "suborganisations": ["6023a25540aaa6287f3cc1a0"]
+}
+
+###
+
+POST http://localhost:8001/api/organisations
+content-type: application/json
+
+{
+    "name": "Germany",
+    "description": "Germany is...",
+    "path": "/eu/germany",
+    "visibility": "public"
+}
+
+###
+
+GET http://localhost:8001/api/organisations/6022d834102628241d2d9838/children
+
+### Person
+
+GET http://localhost:8001/api/persons?page=1&limit=20
+
+###
+
+GET http://localhost:8001/api/persons/601c3aa82bbbab60b5310345
+
+###
+
+GET http://localhost:8001/api/persons/find/Ann
+
+###
+
+POST http://localhost:8001/api/auth
+content-type: application/json
+
+{
+    "email": "carlos@expert.org",
+    "password": "12345"
+}
+
+###
+
+GET http://localhost:8001/api/experts/find?skill=spanish
+content-type: application/json
+
+

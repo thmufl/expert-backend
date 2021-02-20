@@ -1,0 +1,16 @@
+GET http://localhost:8001/api/organisations/602cf4f13e26221746ffa544
+
+###
+
+POST http://localhost:8001/api/organisations
+content-type: application/json
+
+{
+    "name": "United Nations",
+    "description": "The UN is...",
+    "director": "602cdea2cfb7eb149ea7c4e6",
+    "board": ["602cf3dc3e26221746ffa540"],
+    "members": ["602cf4863e26221746ffa542"],
+    "suborganisations": [],
+    "visibility": "public"
+}

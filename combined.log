@@ -1,3 +1,6 @@
 {"level":"error","message":"SyntaxError: Unexpected token } in JSON at position 91","service":"user-service"}
 {"level":"error","message":"SyntaxError: Unexpected token } in JSON at position 91","service":"user-service"}
 {"level":"info","message":"Registered user {\n  _id: 602a4e25e59865090b8286ba,\n  name: 'Hans Arp',\n  email: 'hans@expert.org',\n  password: '$2b$10$5.tuZmDMECTZd0/lZoufKOTtw82ChRPbTECvdJeBLhza1dCcsSRQ2',\n  __v: 0\n}","service":"user-service"}
+{"level":"info","message":"Registered user {\n  _id: 602cdea2cfb7eb149ea7c4e6,\n  name: 'Ann Smith',\n  email: 'ann@expert.org',\n  password: '$2b$10$mV1TrEroPiUCKAeudKikBugiqkcXsenFg7aBKvr8PyZ9yBBW8ef.G',\n  isAdmin: true,\n  __v: 0\n}","service":"user-service"}
+{"level":"info","message":"Registered user {\n  _id: 602cf3dc3e26221746ffa540,\n  name: 'Carlos Santana',\n  email: 'carlos@expert.org',\n  password: '$2b$10$u16QFqmaR6MF9jZ0qzLuEuGxzYDMtyeIwRrSfVKJ5j4aFoJ.H50X.',\n  __v: 0\n}","service":"user-service"}
+{"level":"info","message":"Registered user {\n  _id: 602cf4863e26221746ffa542,\n  name: 'Igor Stravinsky',\n  email: 'igor@expert.org',\n  password: '$2b$10$V2.C6/Jq95ZxtmvLWPX.MuSxjdpd1oRZsV0rWNV7gCZ52iXbdzX1S',\n  __v: 0\n}","service":"user-service"}

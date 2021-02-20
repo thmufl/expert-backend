@@ -9,8 +9,6 @@ export interface IUserProfile extends Document {
   user: IUser;
   description: string;
   skills: ISkill[];
-  organisations: IOrganisation[];
-  visibility: string;
 }
 
 const userProfileSchema = new Schema({
@@ -24,27 +22,14 @@ const userProfileSchema = new Schema({
     type: String,
     max: 2048,
   },
-  skills: [skillSchema],
-  organisations: [{
-    type: mongoose.Types.ObjectId,
-    ref: Organisation,
-    unique: true
-  }],
-  visibility: {
-    type: String,
-    enum: ["public", "private", "protected"],
-    required: [true, "public"],
-    default: "public"
-  }
+  skills: [skillSchema]
 });
 
 export const validate = (profile: IUserProfile) => {
   const schema = Joi.object({
     user: Joi.string().required(),
     description: Joi.string().max(2048),
-    skills: Joi.array().max(50),
-    organisations: Joi.array().max(50),
-    visibility: Joi.string().required().valid("public", "protected", "private")
+    skills: Joi.array().max(50)
   });
   return schema.validate(profile);
 };

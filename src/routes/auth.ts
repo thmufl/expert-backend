@@ -7,10 +7,12 @@ import User from "../models/user";
 const router = express.Router();
 
 router.post("/", async (req, res) => {
+	
 	const { error } = validate(req.body);
 	if (error) return res.status(400).send(error.details[0].message);
 
 	let user = await User.findOne({ email: req.body.email });
+	console.log(req.body.email, user);
 	if (!user) return res.status(400).send("Invalid email or password.");
 
 	const validPassword = await bcrypt.compare(
@@ -21,7 +23,8 @@ router.post("/", async (req, res) => {
 		return res.status(400).send("Invalid email or password.");
 
 	const token = user.generateAuthToken();
-	res.send(token);
+	user.password = undefined;
+	res.json({ user, token });
 });
 
 const validate = function (req: Request) {

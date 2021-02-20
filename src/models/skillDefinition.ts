@@ -1,15 +1,13 @@
 import mongoose, { Schema, Document } from "mongoose";
 import Joi from "Joi";
 
-import User, { IUser } from "./user";
-
 export interface ISkillDefinition extends Document {
   name: string;
   description: string;
-  creator: IUser;
+  status: String;
 }
 
-const skillDefinitionSchema = new Schema({
+export const skillDefinitionSchema = new Schema({
   name: {
     type: String,
     min: 5,
@@ -20,17 +18,19 @@ const skillDefinitionSchema = new Schema({
     type: String,
     max: 2048
   },
-  createdBy: {
-    type: mongoose.Types.ObjectId,
-    ref: User
-  }
+  status: {
+		type: String,
+		enum: ["proposed", "active", "suspended"],
+		required: true,
+    default: "proposed"
+	},
 });
 
 export const validate = (skillDef: ISkillDefinition) => {
   const schema = Joi.object({
     name: Joi.string().min(5).max(255).required(),
     description: Joi.string().max(2048),
-    createdBy: Joi.string().required()
+		status: Joi.string().required().valid("proposed", "active", "suspended"),
   });
   return schema.validate(skillDef);
 };

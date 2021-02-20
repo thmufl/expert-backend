@@ -9,6 +9,7 @@ import config from "config";
 import logger from "./middleware/logger"
 
 import users from "./routes/users";
+import experts from "./routes/experts";
 import organisations from "./routes/organisations";
 import userProfiles from "./routes/userProfiles";
 import skillDefinitions from "./routes/skillDefinitions";
@@ -33,6 +34,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/users", users);
+app.use("/api/experts", experts);
 app.use("/api/userProfiles", userProfiles);
 app.use("/api/organisations", organisations);
 app.use("/api/skills/definitions", skillDefinitions);
