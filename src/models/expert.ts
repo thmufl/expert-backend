@@ -4,8 +4,7 @@ import Joi from "Joi";
 import skillSchema, { ISkill } from "./skill";
 
 export interface IExpert extends Document {
-	firstname: String;
-	lastname: String;
+	name: String;
 	location: String;
 	skills: ISkill[];
 }

@@ -1,0 +1,55 @@
+{
+	"openapi": "3.0.2",
+	"info": {
+		"title": "Expert API",
+		"version": "1.0",
+		"description": "An API for managing experts.",
+		"contact": { "name": "Thomas Mueller Flury", "email": "thmufl@gmail.com" },
+		"termsOfService": "https://cirtho.com/terms-of-service",
+		"license": { "name": "MIT", "url": "https://..." }
+	},
+	"servers": [
+		{ "url": "https://api.server.test/v1", "description": "Dev server" }
+	],
+	"paths": {
+		"/organizations": {
+			"get": {
+				"description": "Obtain information about the organizations from the Expert database.",
+				"parameters": [
+					{
+						"name": "bodyLimit",
+						"description": "The number of organizations returned.",
+						"in": "query",
+						"schema": {
+							"type": "integer",
+							"minimum": 10,
+							"maximum": 100,
+							"example": 20
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Successfull pull of organization infos.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"properties": {
+											"_id": {
+												"type": "string",
+												"description": "The id of the organization.",
+												"example": "602cf4f13e26221746ffa544"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

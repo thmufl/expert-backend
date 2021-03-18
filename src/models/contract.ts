@@ -2,13 +2,13 @@ import mongoose from "mongoose";
 import Joi from "Joi";
 
 import User, { userSchema, IUser } from "./user";
-import Organisation, { IOrganisation } from "./organisation";
+import Organization, { IOrganization } from "./organization";
 
 export interface IContract extends Document {
 	name: String;
 	description: String;
-  contractor: { person: IUser, organisation: IOrganisation };
-  contractee: { person: IUser, organisation: IOrganisation };
+  contractor: { person: IUser, organisation: IOrganization };
+  contractee: { person: IUser, organisation: IOrganization };
 	status: String;
 }
 
@@ -23,7 +23,7 @@ export const contractSchema = new mongoose.Schema({
 		},
 		organisation: {
 			type: mongoose.Types.ObjectId,
-			ref: Organisation,
+			ref: Organization,
 		},
 		
 	},
@@ -35,7 +35,7 @@ export const contractSchema = new mongoose.Schema({
 		},
 		organisation: {
 			type: mongoose.Types.ObjectId,
-			ref: Organisation,
+			ref: Organization,
 		}
 	},
 });

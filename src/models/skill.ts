@@ -1,12 +1,20 @@
-import { Schema, Document } from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 import Joi from "Joi";
 
+import SkillDefinition, { skillDefinitionSchema, ISkillDefinition } from "./skillDefinition";
+
 export interface ISkill extends Document {
+	skillDefinitionId: String,
 	name: String;
 	status: String;
 }
 
 const skillSchema = new Schema({
+	skillDefinitionId: {
+		type: mongoose.Types.ObjectId,
+		ref: SkillDefinition,
+  		required: true
+	},
 	name: {
 		type: String,
 		required: true,

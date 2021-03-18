@@ -2,7 +2,7 @@ import mongoose, { Schema, Document } from "mongoose";
 import Joi from "Joi";
 
 import User, { IUser } from "./user";
-import Organisation, { IOrganisation } from "./organisation";
+import Organization, { IOrganization } from "./organization";
 import skillSchema, { ISkill } from "./skill";
 
 export interface IUserProfile extends Document {

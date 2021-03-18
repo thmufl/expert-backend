@@ -1,0 +1,37 @@
+POST http://localhost:8001/api/categories
+content-type: application/json
+
+{
+    "name": "Vegetables",
+    "description": "Vegetables are..."
+}
+
+###
+
+POST http://localhost:8001/api/categories/605385a073aaf205f8686363/children
+content-type: application/json
+
+{
+    "name": "Fruits",
+    "description": "Fruits are..."
+}
+
+###
+
+GET http://localhost:8001/api/categories/
+
+###
+
+PUT http://localhost:8001/api/categories/605385a073aaf205f8686363
+content-type: application/json
+
+{
+    "name": "Vegetables",
+    "description": "Vegetables are very tasty...",
+    "children": ["605385ba73aaf205f8686364"]
+}
+
+###
+
+DELETE http://localhost:8001/api/categories/6053961d9690af0715142c47
+content-type: application/json

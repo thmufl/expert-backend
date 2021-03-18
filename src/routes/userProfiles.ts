@@ -4,7 +4,7 @@ import admin from "../middleware/admin";
 import auth from "../middleware/auth";
 
 import UserProfile, { validate } from "../models/userProfile";
-import Organisation from "../models/organisation";
+import Organization from "../models/organization";
 
 const router = express.Router();
 

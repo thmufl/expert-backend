@@ -43,61 +43,53 @@ db.experts.insertMany([
     name: "Carlos Santana",
     location: "Zürich/Altstetten",
     skills: [
-      { name: "German-Spanish Translator", status: "confirmed" },
-      { name: "Spanish-German Translator", status: "unconfirmed" }
+      { skillDefinitionId: "100", name: "Spanish-German Translator", status: "confirmed" },
+      { skillDefinitionId: "101", name: "Spanish-German Interpretor (On Court)", status: "unconfirmed" }
     ]
   },
   {
     name: "Paco De Lucia",
     location: "Zürich/Oerlikon",
     skills: [
-      { name: "German-Spanish Translator (On Court)", status: "confirmed" },
-      { name: "German-Spanish Translator (White Collar Crime)", status: "confirmed" },
-      { name: "Spanish-German Translator", status: "confirmed" }
+      { skillDefinitionId: "100", name: "Spanish-German Translator", status: "confirmed" },
+      { skillDefinitionId: "101", name: "Spanish-German Interpretor (On Court)", status: "confirmed" }
     ]
   },
   {
     name: "India Martinez",
     location: "Zürich/Höngg",
     skills: [
-      { name: "German-Spanish Translator", status: "unconfirmed" },
-      { name: "Spanish-German Translator", status: "unconfirmed" },
-      { name: "Portuguese-German Translator", status: "unconfirmed" },
-      { name: "Portuguese-German Interpretor", status: "unconfirmed" }
+      { skillDefinitionId: "103", name: "Portuguese-German Translator", status: "unconfirmed" },
+      { skillDefinitionId: "104", name: "Portuguese-German Interpretor", status: "confirmed" }
     ]
   },
   {
     name: "Anne Dupont",
     location: "Zürich/Hottingen",
     skills: [
-      { name: "German-French Translator", status: "confirmed" },
-      { name: "French-German Translator", status: "suspended" },
-      { name: "Italian-German Translator", status: "confirmed" }
+      { skillDefinitionId: "105", name: "Italian-German Interpretor", status: "confirmed" },
+      { skillDefinitionId: "106", name: "French-German Interpretor", status: "confirmed" }
     ]
   },
   {
     name: "Igor Stravinsky",
     location: "Dübendorf",
     skills: [
-      { name: "German-Russian Translator (White Collar Crime, Music Business)", status: "confirmed" },
-      { name: "Russian-German Translator", status: "confirmed" },
+      { skillDefinitionId: "107", name: "Russian-German Interpretor", status: "confirmed" },
     ]
   },
   {
     name: "Speedy Gonzales",
     location: "Zürich/Höngg",
     skills: [
-      { name: "German-Spanish Translator (Sports and Music Business)", status: "confirmed" },
-      { name: "German-Spanish Translator (White Collar Crime)", status: "confirmed" },
-      { name: "Spanish-German Translator", status: "confirmed" }
+      { skillDefinitionId: "102", name: "Spanish-German Interpretor (White Collar Crime)", status: "confirmed" },
     ]
   },
   {
     name: "Pierre Jardin",
     location: "Zürich/Hirslanden",
     skills: [
-      { name: "German-French Translator (White Collar Crime)", status: "confirmed" },
-      { name: "French-German Translator (White Collar Crime)", status: "suspended" }
+      { skillDefinitionId: "106", name: "French-German Interpretor", status: "confirmed" },
     ]
   }
 ]);

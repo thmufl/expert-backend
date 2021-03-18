@@ -1,2 +1,3 @@
 {"level":"error","message":"SyntaxError: Unexpected token } in JSON at position 91","service":"user-service"}
 {"level":"error","message":"SyntaxError: Unexpected token } in JSON at position 91","service":"user-service"}
+{"level":"error","message":"SyntaxError: Unexpected token } in JSON at position 68","service":"user-service"}
